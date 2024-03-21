@@ -1,11 +1,28 @@
 {
-  "name": "@react-native/feedback-star",
-  "version": "1.0.0",
+  "name": "@coder-shubh/feedback-star",
+  "version": "1.0.8",
   "description": "A React-Native component for feedback star rating.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coder-shubh/ShubhamPackage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coder-shubh/ShubhamPackage/issues"
+  },
+  "homepage": "https://github.com/coder-shubh/ShubhamPackage#readme",
+  "keywords": [
+    "\"react\"",
+    "\"react-native\"",
+    "\"component\"",
+    "\"feedback\"",
+    "\"star\"",
+    "\"feedback-star\"",
+    "\"coder-shubh\""
+  ],
   "author": "coder-shubh",
   "license": "ISC",
   "peerDependencies": {

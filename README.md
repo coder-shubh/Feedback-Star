@@ -32,10 +32,10 @@ You can install the `@coder-shubh/feedback-star` package using npm or yarn:
 
 ```bash
 # with npm
-npm i @coder-shubh/feedback-star
+npm i @coder-shubh/feedback-star react-native-vector-icons
 
 # with yarn
-yarn add @coder-shubh/feedback-star
+yarn add @coder-shubh/feedback-star react-native-vector-icons
 ```
 
 <!-- Usage -->

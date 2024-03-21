@@ -44,7 +44,7 @@ yarn add @coder-shubh/feedback-star
 ```js
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { FeedBackStar } from "@react-native/feedback-star";
+import { FeedBackStar } from "@coder-shubh/feedback-star";
 
 const App = () => {
   const handleStarPress = (rating: number) => {

@@ -1,4 +1,5 @@
 // FeedBackStar.tsx
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useCommonImports } from '../imports/index';
 
@@ -8,6 +9,7 @@ interface FeedBackStarProps {
     starSize?: number;
     selectedColor?: string;
     unselectedColor?: string;
+    halfStarColor?:string;
 }
 
 const FeedBackStar: React.FC<FeedBackStarProps> = ({
@@ -15,26 +17,44 @@ const FeedBackStar: React.FC<FeedBackStarProps> = ({
     onStarPress,
     starSize = 52,
     selectedColor = '#ffb300',
-    unselectedColor = '#000'
+    unselectedColor = '#000',
+    halfStarColor = '#ffb300'
 }) => {
     const { useState, View, TouchableOpacity, StyleSheet,MaterialIcons } = useCommonImports();
     const [starRating, setStarRating] = useState<number>(initialRating);
 
     const handleStarPress = (rating: number) => {
-        setStarRating(rating);
+        // Toggle half-star if already selected
+        if (rating === starRating) {
+            setStarRating(rating - 0.5);
+        } else {
+            setStarRating(rating);
+        }
+
         if (onStarPress) {
             onStarPress(rating);
         }
     };
 
     const renderStar = (index: number) => {
-        const iconName = starRating >= index ? 'star' : 'staro';
-        const starStyle = starRating >= index ? styles.starSelected : styles.starUnselected;
+        let iconName: string;
+        let starStyle: any;
+
+        if (starRating >= index) {
+            iconName = 'star';
+            starStyle = styles.starSelected;
+        } else if (starRating + 0.5 === index) {
+            iconName = 'star-half-full';
+            starStyle = styles.starSelected;
+        } else {
+            iconName = 'star-outline';
+            starStyle = styles.starUnselected;
+        }
 
         return (
             <TouchableOpacity key={index} onPress={() => handleStarPress(index)}>
                 {/* Assuming MaterialIcons is imported elsewhere */}
-                <MaterialIcons name={iconName} size={starSize} style={[starStyle, { color: starRating >= index ? selectedColor : unselectedColor }]} />
+                <MaterialIcons name={iconName} size={starSize} style={[starStyle, { color: starRating >= index ? selectedColor : (index - 0.5 === starRating ? halfStarColor : unselectedColor) }]} />
             </TouchableOpacity>
         );
     };

@@ -1,6 +1,6 @@
 {
   "name": "@coder-shubh/feedback-star",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A React-Native component for feedback star rating.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,9 @@
     "\"feedback\"",
     "\"star\"",
     "\"feedback-star\"",
-    "\"coder-shubh\""
+    "\"coder-shubh\"",
+    "\"android\"",
+    "\"ios\""
   ],
   "author": "coder-shubh",
   "license": "ISC",

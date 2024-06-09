@@ -59,6 +59,7 @@ const App = () => {
         starSize={40}
         selectedColor="#ffb300"
         unselectedColor="#000"
+        halfStarColor='#ffb300'
       />
     </View>
   );
